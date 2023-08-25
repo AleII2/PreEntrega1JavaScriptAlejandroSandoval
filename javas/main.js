@@ -62,4 +62,65 @@ function suma(num1, num2){
 function mensaje(mensaje){
     console.log(mensaje);
 }
-suma(numero1, numero2);
+suma(numero1, numero2); 
+// ------------------un objeto-----------------
+const persona = {
+    nombre:"Sebastian",
+    edad:25,
+    comidaFavorita:"pizza",
+};
+for (let key in persona){
+    console.log(key, persona[key]);
+}
+
+let edad = persona.edad;
+console.log(edad);
+
+persona.edad = 27;
+
+persona.deporteFavorito = "golf";
+
+
+
+// ------------------ array---------------------
+const miArray = ["Alejandro", "Javier", "Esteban"];
+
+let nombres = miArray[0];
+console.log(nombres);
+
+nombres = miArray[1];
+console.log(nombres);
+
+nombres = miArray[2];
+console.log(nombres);
+
+miArray.push("Maria");
+console.log(nombres);
+
+for (let i = 0 ; i < nombres.length; i++) {
+    console.log(nombres[i]);
+}
+
+const arrayDeObjetos = [
+    {
+        nombre: "daniela",
+        edad:25,
+        comidaFavorita:"hamburguesa"
+    },
+    {
+        nombre:"mario",
+        edad:38,
+        comidaFavorita:"pizza"
+    },
+    {
+        nombre:"jorge",
+        edad:57,
+        comidaFavorita:"milanesas",
+    },
+];
+
+for (let i = 0; i < arrayDeObjetos.length; i++) {
+    console.log("Nombre: " + arrayDeObjetos[i].nombre);
+    console.log("Edad: " + arrayDeObjetos[i].edad);
+    console.log("Comida Favorita: " + arrayDeObjetos[i].comidaFavorita);
+}
