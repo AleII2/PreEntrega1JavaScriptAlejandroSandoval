@@ -1,23 +1,26 @@
-const nombre = document.getElementById("name")
-const email = document.getElementById("email")
-const pass = document.getElementById("password")
-const from = document.getElementById("from")
-
-from.addEventListener("submit", e=>{
-    e.preventDefault()
-    let entrar = false
-    let regexEmail = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/ 
-
-    if(nombre.value.length <5){
-        alert("Nombre muy corto")
-        entrar = true
+const ciudades = [
+    {
+        name:"Madrid",
+        poblacion:"3M",
+        pais:"España",
+    },
+    {
+        name:"Argentina",
+        poblacion:"48M",
+        pais:"Bs.As",
+    },
+    {
+        name:"Paris",
+        poblacion:"10M",
+        pais:"Francia",
     }
-    if(!regexEmail.test(email.value)){
-        alert("Email no es valido")
-        entrar = true
+];
+document.getElementById("show").addEventListener("click", function(){
+    const name = document.getElementById("name").value;
+    const city = ciudades.find( city => city.name === name );
+    if(city){
+        alert("La poblacion de ${name} es ${city.poblacion}");
+    }else{
+        alert ("No tenemos esa Ciudad");
     }
-    if(pass.value.length <8){
-        alert("Contraseña muy corto")
-        entrar = true
-    }
-})
+});
